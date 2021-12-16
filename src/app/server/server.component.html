@@ -1,6 +1,60 @@
 <h3> server component</h3>
-
 <div class="container">
-  <!-- must return string in the end  -->
-  <p>server {{ serverId + 2 }}  {{ serverId == 10 ? getServerName() : "name2" }}</p>
+  <button type="button"
+          (click)="onShowPast()"
+          class="btn btn-outline-primary btn-sm">show past
+  </button>
+  <!-- *ngif will totally remove data from dom elements -->
+  <div *ngIf="showPast; else noShoePast" class="container">
+    <!-- must return string in the end  -->
+    <p>server {{ serverId + 2 }}  {{ serverId == 10 ? getServerName() : "name2" }}</p>
+    <!-- property biding -->
+
+    <div class="row input-group mb-lg-4">
+      <div class="col">
+        <input type="text"
+               class="form-control"
+               placeholder="First name"
+               (input)="onUpdateName($event)"
+               aria-label="First name">
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+    <button type="button"
+            (click)="onCreateServer()"
+            class="btn btn-primary"
+            [disabled]="isEnabled">{{buttonName}}</button>
+    <p>{{serverCreationStatus}}</p>
+
+
+    <div class="row input-group mb-lg-4">
+      <div class="col">
+        <input type="text"
+               class="form-control"
+               placeholder="First name"
+               [(ngModel)]="serverNme"
+               aria-label="First name">
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noShoePast> <!-- local variables in dom -->
+    <p>past is hided </p>
+  </ng-template>
+
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     -->
+
+  <pre *ngFor="let daa of availbleData; let idx = index" [ngStyle]="{color: getColor(),
+  textDecoration: 'underline'}">{{ idx }} server is {{serverStatus}}</pre>
+  <button type="button"
+          (click)="onSetServerStatus()"
+          class="btn btn-outline-primary btn-sm">server on
+  </button>
 </div>
+
+
