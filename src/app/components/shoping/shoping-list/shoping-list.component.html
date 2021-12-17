@@ -1,7 +1,16 @@
 <div class="row">
-  <div class="col-xs-10">
+  <div class="col-md-7">
     <app-shoping-edit></app-shoping-edit>
     <hr>
-    <p> shopping list </p>
+    <h4> Ingridience :</h4>
+
+    <ul class="list-group">
+      <a class="list-group-item" *ngFor="let ingrid of ingresientsList" style="cursor: pointer;">
+        <p>{{ ingrid.name }} ({{ ingrid.amount }})</p>
+
+      </a>
+    </ul>
   </div>
+
+  <div class="col-md-5"></div>
 </div>
