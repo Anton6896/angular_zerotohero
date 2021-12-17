@@ -1,1 +1,20 @@
-<p>app-shopping-edit</p>
+<div class="row">
+    <div class="col-ex-12">
+        <form>
+            <div class="row">
+                <div class="col-sm-7 form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" min="1" id="amount" class="form-control">
+                </div>
+            </div>
+            <hr>
+            <button type="submit" (click)="onAddItem()" class="btn btn-success float-start">add</button>
+            <button type="button" (click)="onDeleteItem()" class="btn btn-danger float-end">delete</button>
+
+        </form>
+    </div>
+</div>

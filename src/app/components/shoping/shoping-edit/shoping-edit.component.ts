@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopingEditComponent implements OnInit {
 
+  onAddItem(){
+    console.log('add')
+  }
+
+  onDeleteItem(){
+    console.log('delete')
+  }
+
   constructor() { }
 
   ngOnInit(): void {
