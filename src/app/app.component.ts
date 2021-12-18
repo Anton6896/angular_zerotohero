@@ -7,13 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  serverElements = [
-    {
-      type: 'server',
-      name: 'name 1',
-      content: 'content 1'
-    },
-  ];
+  serverElements = [];
 
   onServerAdded(data: { name: string, content: string }) {
     this.serverElements.push({
@@ -30,6 +24,4 @@ export class AppComponent {
       content: data.content
     })
   }
-
-
 }
