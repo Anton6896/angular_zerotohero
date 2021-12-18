@@ -3,6 +3,10 @@
     (serverCreated)="onServerAdded($event)"
     (blueprintCreated)="onBlueprintAdded($event)">
   </app-cockpit>
+  <button class="btn btn-danger btn-sm" (click)="onDeleteEntry()">destroy</button>
   <hr>
-  <app-server-element *ngFor="let elem of serverElements" [element]="elem"></app-server-element>
+  <app-server-element *ngFor="let elem of serverElements" [element]="elem">
+
+    <div *ngIf="elem.type === 'blueprint'">{{ elem.content }}</div>  <!--this line will be content for ng-content in app-server-element-->
+  </app-server-element>
 </div>
