@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  myFlag: boolean = true;
 
-  constructor() { }
+  @Output()
+  recipeEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
+
+  @Output()
+  shoppingEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  onRecipe() {
+    this.recipeEmitter.emit({showRecipe: true, showShopping: false})
+  }
+
+  onDetails() {
+    this.shoppingEmitter.emit({showRecipe: false, showShopping: true})
   }
 
 }

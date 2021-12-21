@@ -7,4 +7,13 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'sometext';
+  showData: {} = {showRecipe: true, showShopping: false}
+
+  onRecipePush(data: { showRecipe: boolean, showShopping: boolean }) {
+    this.showData = data
+  }
+
+  onShoppingPush(data: { showRecipe: boolean, showShopping: boolean }) {
+    this.showData = data
+  }
 }

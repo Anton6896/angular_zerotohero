@@ -1,9 +1,12 @@
 <div class="row" style="margin-bottom: 60px">
-  <app-header></app-header>
+  <app-header
+  (recipeEmitter)="onRecipePush($event)"
+  (shoppingEmitter)="onShoppingPush($event)"
+  ></app-header>
 </div>
 <div class="container">
   <div class="row">
-    <app-recipes></app-recipes>
-    <app-shoping></app-shoping>
+    <app-recipes *ngIf="showData['showRecipe']"></app-recipes>
+    <app-shoping *ngIf="showData['showShopping']"></app-shoping>
   </div>
 </div>
