@@ -6,13 +6,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  myFlag: boolean = true;
 
-  @Output()
-  recipeEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
-
-  @Output()
-  shoppingEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
+  @Output() recipeEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
+  @Output() shoppingEmitter = new EventEmitter<{ showRecipe: boolean, showShopping: boolean }>()
 
 
   constructor() {
