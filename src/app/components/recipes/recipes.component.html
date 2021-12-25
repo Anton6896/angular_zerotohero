@@ -5,6 +5,9 @@
     ></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-details [recipeData]="itemData" *ngIf="itemData != null"></app-recipe-details>
+    <app-recipe-details [recipeData]="itemData" *ngIf="itemData; else infoText"></app-recipe-details>
+    <ng-template #infoText>
+      <h3 style="text-align: center;">select recipe</h3>
+    </ng-template>
   </div>
 </div>
