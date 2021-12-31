@@ -4,11 +4,20 @@
 <div class="container">
   <label class="col-sm-2 col-form-label">jjust do it </label>
   <div class="col-sm-10">
-    <input [(ngModel)]="title"
-           class="form-control" type="text"
-           placeholder="Default input" aria-label="default input example">
+    <input [(ngModel)]="title" class="form-control" type="text" placeholder="Default input"
+      aria-label="default input example">
 
   </div>
+
 </div>
 
-<div class="container"><p>{{ title }}</p></div>
+<div class="container">
+  <p appBasicHighLight > this is my own directive </p>
+  <p appBetterHighlight > i am better formated</p>
+</div>
+
+
+
+<div class="container">
+  <p>{{ title }}</p>
+</div>
